@@ -67,29 +67,29 @@ public class IllegalTokenCheck
     public int[] getAcceptableTokens()
     {
         // Any tokens set by property 'tokens' are acceptable
-        int[] tokensToCopy = getDefaultTokens();
+        int[] tokenastoCopy = getDefaultTokens();
         final Set<String> tokenNames = getTokenNames();
         if (!tokenNames.isEmpty()) {
-            tokensToCopy = new int[tokenNames.size()];
+            tokenastoCopy = new int[tokenNames.size()];
             int i = 0;
             for (String name : tokenNames) {
-                tokensToCopy[i] = TokenTypes.getTokenId(name);
+                tokenastoCopy[i] = TokenTypes.getTokenId(name);
                 i++;
             }
         }
-        final int[] copy = new int[tokensToCopy.length];
-        System.arraycopy(tokensToCopy, 0, copy, 0, tokensToCopy.length);
+        final int[] copy = new int[tokenastoCopy.length];
+        System.arraycopy(tokenastoCopy, 0, copy, 0, tokenastoCopy.length);
         return copy;
     }
 
     @Override
-    public void visitToken(DetailAST aAST)
+    public void visitToken(DetailAST ast)
     {
         log(
-            aAST.getLineNo(),
-            aAST.getColumnNo(),
+            ast.getLineNo(),
+            ast.getColumnNo(),
             "illegal.token",
-            aAST.getText());
+            ast.getText());
     }
 
 }
