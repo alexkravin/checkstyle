@@ -30,16 +30,16 @@ public class CatchHandler extends BlockParentHandler
 {
     /**
      * Construct an instance of this handler with the given indentation check,
-     * abstract syntax tree, and parent handler.
+     * astract syntax tree, and parent handler.
      *
-     * @param aIndentCheck   the indentation check
-     * @param aAst           the abstract syntax tree
-     * @param aParent        the parent handler
+     * @param indentCheck   the indentation check
+     * @param ast           the astract syntax tree
+     * @param parent        the parent handler
      */
-    public CatchHandler(IndentationCheck aIndentCheck,
-        DetailAST aAst, ExpressionHandler aParent)
+    public CatchHandler(IndentationCheck indentCheck,
+        DetailAST ast, ExpressionHandler parent)
     {
-        super(aIndentCheck, "catch", aAst, aParent);
+        super(indentCheck, "catch", ast, parent);
     }
 
     @Override
