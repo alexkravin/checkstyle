@@ -53,7 +53,7 @@ import com.puppycrawl.tools.checkstyle.api.FileText;
  * The user can change the file that is parsed and displayed
  * through a JFileChooser.
  *
- * @author Lars K�hne
+ * @author Lars Kühne
  */
 public class ParseTreeInfoPanel extends JPanel
 {

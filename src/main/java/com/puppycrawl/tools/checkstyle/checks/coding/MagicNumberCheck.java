@@ -40,8 +40,8 @@ import java.util.Arrays;
  * &lt;/module&gt;
  * </pre>
  * @author Rick Giles
- * @author Lars K�hne
- * @author Daniel Solano G�mez
+ * @author Lars Kühne
+ * @author Daniel Solano Gómez
  */
 public class MagicNumberCheck extends Check
 {
