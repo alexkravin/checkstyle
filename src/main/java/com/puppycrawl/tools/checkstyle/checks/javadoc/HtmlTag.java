@@ -2,8 +2,8 @@
 // checkstyle: Checks Java source code for adherence to a set of rules.
 // Copyright (C) 2001-2014  Oliver Burn
 //
-// This library is free software; you can redistribute it and/or
-// modify it under the terms of the GNU Lesser General Public
+// This library is free software; you can redistribute it id/or
+// idify it under the terms of the GNU Lesser General Public
 // License as published by the Free Software Foundation; either
 // version 2.1 of the License, or (at your option) any later version.
 //
@@ -19,7 +19,7 @@
 package com.puppycrawl.tools.checkstyle.checks.javadoc;
 
 /**
- * Used to keep track of a tag and the text that follows it.
+ * Used to keep track of a tag id the text that follows it.
  *
  * @author Chris Stillwell
  */
@@ -29,42 +29,42 @@ class HtmlTag
     private static final int MAX_TEXT_LEN = 60;
 
     /** The HTML tag name. */
-    private final String mId;
+    private final String id;
 
     /** The line number in the source file where this tag was found. */
-    private final int mLineNo;
+    private final int lineNo;
 
     /** The position within the line where this tag was found. */
-    private final int mPosition;
+    private final int position;
 
     /** The comment line of text where this tag appears. */
-    private final String mText;
+    private final String text;
 
     /** if this tag is self-closed. */
-    private final boolean mClosedTag;
+    private final boolean closedTag;
 
-    /** if the tag is inomplete. */
-    private final boolean mIncomplete;
+    /** if the tag is incomplete. */
+    private final boolean incomplete;
 
     /**
      * Construct the HtmlTag.
-     * @param aId the HTML tag name.
-     * @param aLineNo the source line number of this tag.
-     * @param aPosition the position within the text of this tag.
-     * @param aClosedTag if this tag is self-closed (XHTML style)
-     * @param aIncomplete is the tag is incomplete.
-     * @param aText the line of comment text for this tag.
+     * @param id the HTML tag name.
+     * @param lineNo the source line number of this tag.
+     * @param position the position within the text of this tag.
+     * @param closedTag if this tag is self-closed (XHTML style)
+     * @param incomplete is the tag is incomplete.
+     * @param text the line of comment text for this tag.
      */
-    HtmlTag(String aId, int aLineNo, int aPosition, boolean aClosedTag,
-            boolean aIncomplete, String aText)
+    HtmlTag(String id, int lineNo, int position, boolean closedTag,
+            boolean incomplete, String text)
     {
-        mId = (!"".equals(aId) && (aId.charAt(0) == '/'))
-            ? aId.substring(1) : aId;
-        mLineNo = aLineNo;
-        mPosition = aPosition;
-        mText = aText;
-        mClosedTag = aClosedTag;
-        mIncomplete = aIncomplete;
+        this.id = (!"".equals(id) && (id.charAt(0) == '/'))
+            ? id.substring(1) : id;
+        this.lineNo = lineNo;
+        this.position = position;
+        this.text = text;
+        this.closedTag = closedTag;
+        this.incomplete = incomplete;
     }
 
     /**
@@ -73,7 +73,7 @@ class HtmlTag
      */
     public String getId()
     {
-        return mId;
+        return id;
     }
 
     /**
@@ -82,10 +82,10 @@ class HtmlTag
      */
     public boolean isCloseTag()
     {
-        if (mPosition == (mText.length() - 1)) {
+        if (position == (text.length() - 1)) {
             return false;
         }
-        return (mText.charAt(mPosition + 1) == '/');
+        return (text.charAt(position + 1) == '/');
     }
 
     /**
@@ -94,7 +94,7 @@ class HtmlTag
      */
     public boolean isClosedTag()
     {
-        return mClosedTag;
+        return closedTag;
     }
 
     /**
@@ -103,7 +103,7 @@ class HtmlTag
      */
     public boolean isIncompleteTag()
     {
-        return mIncomplete;
+        return incomplete;
     }
 
     /**
@@ -113,7 +113,7 @@ class HtmlTag
      */
     public int getLineno()
     {
-        return mLineNo;
+        return lineNo;
     }
 
     /**
@@ -123,15 +123,15 @@ class HtmlTag
      */
     public int getPosition()
     {
-        return mPosition;
+        return position;
     }
 
     @Override
     public String toString()
     {
-        final int startOfText = mPosition;
+        final int startOfText = position;
         final int endOfText =
-            Math.min(startOfText + HtmlTag.MAX_TEXT_LEN, mText.length());
-        return mText.substring(startOfText, endOfText);
+            Math.min(startOfText + HtmlTag.MAX_TEXT_LEN, text.length());
+        return text.substring(startOfText, endOfText);
     }
 }
