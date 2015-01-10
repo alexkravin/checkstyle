@@ -224,11 +224,11 @@ public class SuppressionCommentFilterTest
         return checker;
     }
 
-    private String[] removeSuppressed(String[] aFrom, String[] aRemove)
+    private String[] removeSuppressed(String[] from, String[] remove)
     {
         final Collection<String> coll =
-            Lists.newArrayList(Arrays.asList(aFrom));
-        coll.removeAll(Arrays.asList(aRemove));
+            Lists.newArrayList(Arrays.asList(from));
+        coll.removeAll(Arrays.asList(remove));
         return coll.toArray(new String[coll.size()]);
     }
 }
