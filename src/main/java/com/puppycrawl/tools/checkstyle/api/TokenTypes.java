@@ -200,8 +200,8 @@ public final class TokenTypes
      **/
     public static final int CTOR_DEF = GeneratedJavaTokenTypes.CTOR_DEF;
     /**
-     * A method declaration.  The children are modifiers, type parameters,
-     * return type, method name, parameter list, an optional throws list, and
+     * A method declaration.  The children are modifiers, type pnameters,
+     * return type, method name, pnameter list, an optional throws list, and
      * statement list.  The statement list is omitted if the method
      * declaration appears in an interface declaration.  Method
      * declarations may appear inside object blocks of class
@@ -556,8 +556,8 @@ public final class TokenTypes
         GeneratedJavaTokenTypes.IMPLEMENTS_CLAUSE;
 
     /**
-     * A list of parameters to a method or constructor.  The children
-     * are zero or more parameter declarations separated by commas.
+     * A list of pnameters to a method or constructor.  The children
+     * are zero or more pnameter declarations separated by commas.
      *
      * <p>For example</p>
      * <pre>
@@ -591,7 +591,7 @@ public final class TokenTypes
      **/
     public static final int PARAMETERS = GeneratedJavaTokenTypes.PARAMETERS;
     /**
-     * A parameter declaration. The last parameter in a list of parameters may
+     * A pnameter declaration. The last pnameter in a list of pnameters may
      * be variable length (indicated by the ELLIPSIS child node immediately
      * after the TYPE child).
      *
@@ -1216,7 +1216,7 @@ public final class TokenTypes
 
     /**
      * An identifier.  These can be names of types, subpackages,
-     * fields, methods, parameters, and local variables.
+     * fields, methods, pnameters, and local variables.
      **/
     public static final int IDENT = GeneratedJavaTokenTypes.IDENT;
     /**
@@ -2911,7 +2911,7 @@ public final class TokenTypes
      * <pre>
      * SOME_CONSTANT(1)
      * {
-     *     public void someMethodOverridenFromMainBody()
+     *     public void someMethodOverridenFromainBody()
      *     {
      *     }
      * }
@@ -2941,7 +2941,7 @@ public final class TokenTypes
      *             +--TYPE
      *                 |
      *                 +--LITERAL_void (void)
-     *             +--IDENT (someMethodOverridenFromMainBody)
+     *             +--IDENT (someMethodOverridenFromainBody)
      *             +--LPAREN (()
      *             +--PARAMETERS
      *             +--RPAREN ())
@@ -2965,7 +2965,7 @@ public final class TokenTypes
     /**
      * A for-each clause.  This is a child of
      * <code>LITERAL_FOR</code>.  The children of this element may be
-     * a parameter definition, the colon literal and an expression.
+     * a pnameter definition, the colon literal and an expression.
      *
      * @see #VARIABLE_DEF
      * @see #ELIST
@@ -3103,7 +3103,7 @@ public final class TokenTypes
     // note: &#064; is the html escape for '@',
     // used here to avoid confusing the javadoc tool
     /**
-     * An annotation of a package, type, field, parameter or variable.
+     * An annotation of a package, type, field, pnameter or variable.
      * An annotation may occur anywhere modifiers occur (it is a
      * type of modifier) and may also occur prior to a package definition.
      * The notable children are: The annotation name and either a single
@@ -3198,7 +3198,7 @@ public final class TokenTypes
         GeneratedJavaTokenTypes.ANNOTATION_ARRAY_INIT;
 
     /**
-     * A list of type parameters to a class, interface or
+     * A list of type pnameters to a class, interface or
      * method definition. Children are LT, at least one
      * TYPE_PARAMETER, zero or more of: a COMMAs followed by a single
      * TYPE_PARAMETER and a final GT.
@@ -3252,7 +3252,7 @@ public final class TokenTypes
         GeneratedJavaTokenTypes.TYPE_PARAMETERS;
 
     /**
-     * A type parameter to a class, interface or method definition.
+     * A type pnameter to a class, interface or method definition.
      * Children are the type name and an optional TYPE_UPPER_BOUNDS.
      *
      * <p>For example:</p>
@@ -3368,7 +3368,7 @@ public final class TokenTypes
         GeneratedJavaTokenTypes.WILDCARD_TYPE;
 
     /**
-     * An upper bounds on a wildcard type argument or type parameter.
+     * An upper bounds on a wildcard type argument or type pnameter.
      * This node has one child - the type that is being used for
      * the bounding.
      *
@@ -3404,8 +3404,8 @@ public final class TokenTypes
     public static final int AT = GeneratedJavaTokenTypes.AT;
 
     /**
-     * A triple dot for variable-length parameters. This token only ever occurs
-     * in a parameter declaration immediately after the type of the parameter.
+     * A triple dot for variable-length pnameters. This token only ever occurs
+     * in a pnameter declaration immediately after the type of the pnameter.
      *
      * @see <a href="http://www.jcp.org/en/jsr/detail?id=201">
      * JSR201</a>
@@ -3421,13 +3421,13 @@ public final class TokenTypes
 
     /**
      * '&lt;' symbol signifying the start of type arguments or type
-     * parameters.
+     * pnameters.
      */
     public static final int GENERIC_START =
         GeneratedJavaTokenTypes.GENERIC_START;
 
     /**
-     * '&gt;' symbol signifying the end of type arguments or type parameters.
+     * '&gt;' symbol signifying the end of type arguments or type pnameters.
      */
     public static final int GENERIC_END = GeneratedJavaTokenTypes.GENERIC_END;
 
@@ -3542,76 +3542,76 @@ public final class TokenTypes
 
     /**
      * Returns the name of a token for a given ID.
-     * @param aID the ID of the token name to get
+     * @param iD the ID of the token name to get
      * @return a token name
      */
-    public static String getTokenName(int aID)
+    public static String getTokenName(int iD)
     {
-        if (aID > TOKEN_VALUE_TO_NAME.length - 1) {
-            throw new IllegalArgumentException("given id " + aID);
+        if (iD > TOKEN_VALUE_TO_NAME.length - 1) {
+            throw new IllegalArgumentException("given id " + iD);
         }
-        final String name = TOKEN_VALUE_TO_NAME[aID];
+        final String name = TOKEN_VALUE_TO_NAME[iD];
         if (name == null) {
-            throw new IllegalArgumentException("given id " + aID);
+            throw new IllegalArgumentException("given id " + iD);
         }
         return name;
     }
 
     /**
      * Returns the ID of a token for a given name.
-     * @param aName the name of the token ID to get
+     * @param name the name of the token ID to get
      * @return a token ID
      */
-    public static int getTokenId(String aName)
+    public static int getTokenId(String name)
     {
-        final Integer id = TOKEN_NAME_TO_VALUE.get(aName);
+        final Integer id = TOKEN_NAME_TO_VALUE.get(name);
         if (id == null) {
-            throw new IllegalArgumentException("given name " + aName);
+            throw new IllegalArgumentException("given name " + name);
         }
         return id.intValue();
     }
 
     /**
      * Returns the short description of a token for a given name.
-     * @param aName the name of the token ID to get
+     * @param name the name of the token ID to get
      * @return a short description
      */
-    public static String getShortDescription(String aName)
+    public static String getShortDescription(String name)
     {
-        if (!TOKEN_NAME_TO_VALUE.containsKey(aName)) {
-            throw new IllegalArgumentException("given name " + aName);
+        if (!TOKEN_NAME_TO_VALUE.containsKey(name)) {
+            throw new IllegalArgumentException("given name " + name);
         }
 
         final String tokentypes =
             "com.puppycrawl.tools.checkstyle.api.tokentypes";
         final ResourceBundle bundle = ResourceBundle.getBundle(tokentypes);
-        return bundle.getString(aName);
+        return bundle.getString(name);
     }
 
     /**
      * Is argument comment-related type (SINGLE_LINE_COMMENT,
      * BLOCK_COMMENT_BEGIN, BLOCK_COMMENT_END, COMMENT_CONTENT).
-     * @param aType
+     * @param type
      *        token type.
-     * @return true if aType is comment-related type.
+     * @return true if type is comment-related type.
      */
-    public static boolean isCommentType(int aType)
+    public static boolean isCommentType(int type)
     {
-        return aType == TokenTypes.SINGLE_LINE_COMMENT
-                || aType == TokenTypes.BLOCK_COMMENT_BEGIN
-                || aType == TokenTypes.BLOCK_COMMENT_END
-                || aType == TokenTypes.COMMENT_CONTENT;
+        return type == TokenTypes.SINGLE_LINE_COMMENT
+                || type == TokenTypes.BLOCK_COMMENT_BEGIN
+                || type == TokenTypes.BLOCK_COMMENT_END
+                || type == TokenTypes.COMMENT_CONTENT;
     }
 
     /**
      * Is argument comment-related type name (SINGLE_LINE_COMMENT,
      * BLOCK_COMMENT_BEGIN, BLOCK_COMMENT_END, COMMENT_CONTENT).
-     * @param aType
+     * @param type
      *        token type name.
-     * @return true if aType is comment-related type name.
+     * @return true if type is comment-related type name.
      */
-    public static boolean isCommentType(String aType)
+    public static boolean isCommentType(String type)
     {
-        return isCommentType(getTokenId(aType));
+        return isCommentType(getTokenId(type));
     }
 }

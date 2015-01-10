@@ -215,14 +215,14 @@ public class WriteTagCheckTest extends BaseCheckTestSupport
                           String[] expected)
         throws Exception
     {
-        mStream.flush();
+        stream.flush();
         final List<File> theFiles = Lists.newArrayList();
         Collections.addAll(theFiles, processedFiles);
         final int errs = c.process(theFiles);
 
         // process each of the lines
         final ByteArrayInputStream bais =
-            new ByteArrayInputStream(mBAOS.toByteArray());
+            new ByteArrayInputStream(BAOS.toByteArray());
         final LineNumberReader lnr =
             new LineNumberReader(new InputStreamReader(bais));
 

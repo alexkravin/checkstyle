@@ -100,7 +100,7 @@ public class LeftCurlyCheck
      */
     public void setMaxLineLength(int maxLineLength)
     {
-        maxLineLength = maxLineLength;
+        this.maxLineLength = maxLineLength;
     }
 
     @Override

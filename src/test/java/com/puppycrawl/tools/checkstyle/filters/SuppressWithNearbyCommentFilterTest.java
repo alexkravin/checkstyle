@@ -214,7 +214,7 @@ public class SuppressWithNearbyCommentFilterTest
         checker.setLocaleLanguage(locale.getLanguage());
         checker.setModuleClassLoader(Thread.currentThread().getContextClassLoader());
         checker.configure(checkerConfig);
-        checker.addListener(new BriefLogger(mStream));
+        checker.addListener(new BriefLogger(stream));
         return checker;
     }
 

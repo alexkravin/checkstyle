@@ -119,7 +119,7 @@ public class SuppressWarningsFilterTest
         checker.setModuleClassLoader(Thread.currentThread()
             .getContextClassLoader());
         checker.configure(checkerConfig);
-        checker.addListener(new BriefLogger(mStream));
+        checker.addListener(new BriefLogger(stream));
         return checker;
     }
 
