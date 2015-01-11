@@ -25,12 +25,12 @@ import org.junit.Test;
 
 public class LeftCurlyCheckTest extends BaseCheckTestSupport
 {
-    private DefaultConfiguration mCheckConfig;
+    private DefaultConfiguration checkConfig;
 
     @Before
     public void setUp()
     {
-        mCheckConfig = createCheckConfig(LeftCurlyCheck.class);
+        checkConfig = createCheckConfig(LeftCurlyCheck.class);
     }
 
     @Test
@@ -43,13 +43,13 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "30:5: '{' should be on the previous line.",
             "39:5: '{' should be on the previous line.",
         };
-        verify(mCheckConfig, getPath("InputScopeInnerInterfaces.java"), expected);
+        verify(checkConfig, getPath("InputScopeInnerInterfaces.java"), expected);
     }
 
     @Test
     public void testNL() throws Exception
     {
-        mCheckConfig.addAttribute("option", LeftCurlyOption.NL.toString());
+        checkConfig.addAttribute("option", LeftCurlyOption.NL.toString());
         final String[] expected = {
             "49:14: '{' should be on a new line.",
             "53:14: '{' should be on a new line.",
@@ -58,13 +58,13 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "67:12: '{' should be on a new line.",
             "72:18: '{' should be on a new line.",
         };
-        verify(mCheckConfig, getPath("InputScopeInnerInterfaces.java"), expected);
+        verify(checkConfig, getPath("InputScopeInnerInterfaces.java"), expected);
     }
 
     @Test
     public void testNLOW() throws Exception
     {
-        mCheckConfig.addAttribute("option", LeftCurlyOption.NLOW.toString());
+        checkConfig.addAttribute("option", LeftCurlyOption.NLOW.toString());
         final String[] expected = {
             "8:1: '{' should be on the previous line.",
             "12:5: '{' should be on the previous line.",
@@ -78,7 +78,7 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "67:12: '{' should be on a new line.",
             "72:18: '{' should be on a new line.",
         };
-        verify(mCheckConfig, getPath("InputScopeInnerInterfaces.java"), expected);
+        verify(checkConfig, getPath("InputScopeInnerInterfaces.java"), expected);
     }
 
     @Test
@@ -97,13 +97,13 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "77:5: '{' should be on the previous line.",
             "84:5: '{' should be on the previous line.",
         };
-        verify(mCheckConfig, getPath("InputLeftCurlyMethod.java"), expected);
+        verify(checkConfig, getPath("InputLeftCurlyMethod.java"), expected);
     }
 
     @Test
     public void testNL2() throws Exception
     {
-        mCheckConfig.addAttribute("option", LeftCurlyOption.NL.toString());
+        checkConfig.addAttribute("option", LeftCurlyOption.NL.toString());
         final String[] expected = {
             "14:39: '{' should be on a new line.",
             "21:20: '{' should be on a new line.",
@@ -114,7 +114,7 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "74:20: '{' should be on a new line.",
             "87:31: '{' should be on a new line.",
         };
-        verify(mCheckConfig, getPath("InputLeftCurlyMethod.java"), expected);
+        verify(checkConfig, getPath("InputLeftCurlyMethod.java"), expected);
     }
     @Test
     public void testDefault3() throws Exception
@@ -144,20 +144,20 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "133:17: '{' should be on the previous line.",
             "148:1: '{' should be on the previous line.",
         };
-        verify(mCheckConfig, getPath("InputLeftCurlyOther.java"), expected);
+        verify(checkConfig, getPath("InputLeftCurlyOther.java"), expected);
     }
 
     @Test
     public void testNL3() throws Exception
     {
-        mCheckConfig.addAttribute("option", LeftCurlyOption.NL.toString());
+        checkConfig.addAttribute("option", LeftCurlyOption.NL.toString());
         final String[] expected = {
             "26:33: '{' should be on a new line.",
             "91:19: '{' should be on a new line.",
             "97:19: '{' should be on a new line.",
             "142:37: '{' should be on a new line.",
         };
-        verify(mCheckConfig, getPath("InputLeftCurlyOther.java"), expected);
+        verify(checkConfig, getPath("InputLeftCurlyOther.java"), expected);
     }
 
     @Test
@@ -172,7 +172,7 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "69:5: '{' should be on the previous line.",
             "105:5: '{' should be on the previous line.",
         };
-        verify(mCheckConfig, getPath("InputBraces.java"), expected);
+        verify(checkConfig, getPath("InputBraces.java"), expected);
     }
 
     @Test
@@ -183,27 +183,27 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "14:5: '{' should be on the previous line.",
             "21:5: '{' should be on the previous line.",
         };
-        verify(mCheckConfig, getPath("InputLeftCurlyAnnotations.java"), expected);
+        verify(checkConfig, getPath("InputLeftCurlyAnnotations.java"), expected);
     }
 
     @Test
     public void testNLWithAnnotations() throws Exception
     {
-        mCheckConfig.addAttribute("option", LeftCurlyOption.NL.toString());
+        checkConfig.addAttribute("option", LeftCurlyOption.NL.toString());
         final String[] expected = {
             "35:34: '{' should be on a new line.",
             "38:41: '{' should be on a new line.",
             "44:27: '{' should be on a new line.",
             "58:32: '{' should be on a new line.",
         };
-        verify(mCheckConfig, getPath("InputLeftCurlyAnnotations.java"), expected);
+        verify(checkConfig, getPath("InputLeftCurlyAnnotations.java"), expected);
     }
 
     @Test
     public void testLineBreakAfter() throws Exception
     {
-        mCheckConfig.addAttribute("option", LeftCurlyOption.EOL.toString());
-        mCheckConfig.addAttribute("maxLineLength", "100");
+        checkConfig.addAttribute("option", LeftCurlyOption.EOL.toString());
+        checkConfig.addAttribute("maxLineLength", "100");
         final String[] expected = {
             "9:1: '{' should be on the previous line.",
             "12:5: '{' should be on the previous line.",
@@ -221,6 +221,6 @@ public class LeftCurlyCheckTest extends BaseCheckTestSupport
             "56:27: '{' should have line break after.",
             "66:1: '{' should be on the previous line.",
         };
-        verify(mCheckConfig, getPath("InputLeftCurlyLineBreakAfter.java"), expected);
+        verify(checkConfig, getPath("InputLeftCurlyLineBreakAfter.java"), expected);
     }
 }
